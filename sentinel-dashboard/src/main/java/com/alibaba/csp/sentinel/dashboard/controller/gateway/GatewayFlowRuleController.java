@@ -259,9 +259,9 @@ public class GatewayFlowRuleController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishRules(app, ip, port)) {
+        /*if (!publishRules(app, ip, port)) {
             logger.warn("publish gateway flow rules fail after add");
-        }
+        }*/
         publishRules(app);
 
         return Result.ofSuccess(entity);
@@ -406,9 +406,9 @@ public class GatewayFlowRuleController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishRules(app, entity.getIp(), entity.getPort())) {
+        /*if (!publishRules(app, entity.getIp(), entity.getPort())) {
             logger.warn("publish gateway flow rules fail after update");
-        }
+        }*/
         publishRules(app);
 
         return Result.ofSuccess(entity);
@@ -435,9 +435,9 @@ public class GatewayFlowRuleController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishRules(oldEntity.getApp(), oldEntity.getIp(), oldEntity.getPort())) {
+        /*if (!publishRules(oldEntity.getApp(), oldEntity.getIp(), oldEntity.getPort())) {
             logger.warn("publish gateway flow rules fail after delete");
-        }
+        }*/
         publishRules(oldEntity.getApp());
 
         return Result.ofSuccess(id);

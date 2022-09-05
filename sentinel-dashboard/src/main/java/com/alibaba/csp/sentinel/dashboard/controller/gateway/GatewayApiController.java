@@ -174,9 +174,9 @@ public class GatewayApiController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishApis(app, ip, port)) {
+        /*if (!publishApis(app, ip, port)) {
             logger.warn("publish gateway apis fail after add");
-        }
+        }*/
         publishApis(app);
 
         return Result.ofSuccess(entity);
@@ -238,9 +238,9 @@ public class GatewayApiController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishApis(app, entity.getIp(), entity.getPort())) {
+        /*if (!publishApis(app, entity.getIp(), entity.getPort())) {
             logger.warn("publish gateway apis fail after update");
-        }
+        }*/
         publishApis(app);
 
         return Result.ofSuccess(entity);
@@ -266,9 +266,9 @@ public class GatewayApiController {
             return Result.ofThrowable(-1, throwable);
         }
 
-        if (!publishApis(oldEntity.getApp(), oldEntity.getIp(), oldEntity.getPort())) {
+        /*if (!publishApis(oldEntity.getApp(), oldEntity.getIp(), oldEntity.getPort())) {
             logger.warn("publish gateway apis fail after delete");
-        }
+        }*/
         publishApis(oldEntity.getApp());
 
         return Result.ofSuccess(id);
