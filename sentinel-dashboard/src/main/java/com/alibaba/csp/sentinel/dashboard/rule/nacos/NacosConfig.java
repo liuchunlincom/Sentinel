@@ -25,6 +25,7 @@ import com.alibaba.csp.sentinel.dashboard.datasource.entity.gateway.GatewayFlowR
 import com.alibaba.csp.sentinel.dashboard.datasource.entity.rule.FlowRuleEntity;
 import com.alibaba.csp.sentinel.datasource.Converter;
 import com.alibaba.fastjson.JSON;
+import com.alibaba.nacos.api.PropertyKeyConst;
 import com.alibaba.nacos.api.config.ConfigFactory;
 import com.alibaba.nacos.api.config.ConfigService;
 
@@ -84,9 +85,11 @@ public class NacosConfig {
     public ConfigService nacosConfigService() throws Exception {
 
         Properties properties = new Properties();
-        properties.put("serverAddr", nacosProperties.serverAddr);
-        properties.put("namespace", nacosProperties.namespace);
-        properties.put("group", nacosProperties.group);
+        properties.put(PropertyKeyConst.SERVER_ADDR, nacosProperties.serverAddr);
+        properties.put(PropertyKeyConst.NAMESPACE, nacosProperties.namespace);
+        properties.put(PropertyKeyConst.USERNAME, nacosProperties.username);
+        properties.put(PropertyKeyConst.PASSWORD, nacosProperties.password);
         return ConfigFactory.createConfigService(properties);
+
     }
 }

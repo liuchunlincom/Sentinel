@@ -1,5 +1,6 @@
 package com.alibaba.csp.sentinel.dashboard.rule.nacos;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -11,9 +12,14 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "sentinel.nacos")
 public class NacosProperties {
 
-    String serverAddr = "";
-    String namespace = "";
-    String group = NacosConfigUtil.GROUP_ID;
+    @Value("${sentinel.nacos.server-addr:}")
+    String serverAddr;
+    @Value("${sentinel.nacos.namespace:}")
+    String namespace;
+    @Value("${sentinel.nacos.username:}")
+    String username;
+    @Value("${sentinel.nacos.username:}")
+    String password;
 
     public String getServerAddr() {
         return serverAddr;
@@ -31,11 +37,4 @@ public class NacosProperties {
         this.namespace = namespace;
     }
 
-    public String getGroup() {
-        return group;
-    }
-
-    public void setGroup(String group) {
-        this.group = group;
-    }
 }
