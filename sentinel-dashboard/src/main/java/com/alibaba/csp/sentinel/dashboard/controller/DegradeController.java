@@ -49,7 +49,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Eric Zhao
  */
 @RestController
-@RequestMapping("/degrade")
+@RequestMapping("/degrade/v1")
 public class DegradeController {
 
     private final Logger logger = LoggerFactory.getLogger(DegradeController.class);

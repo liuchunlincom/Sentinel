@@ -173,6 +173,8 @@ app.controller('GatewayIdentityCtl', ['$scope', '$stateParams', 'IdentityService
         strategy: 0,
         resource: resource,
         limitApp: 'default',
+        minRequestAmount: 5,
+        statIntervalMs: 1000,
         app: $scope.app,
         ip: mac[0],
         port: mac[1]
